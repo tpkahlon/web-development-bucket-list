@@ -1,0 +1,113 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  color: #444;
+  font-size: 1rem;
+  min-height: 100vh;
+  background: transparent no-repeat url('https://www.thenation.com/wp-content/uploads/2016/07/joseph_teachforindia_img.jpg') center/cover;
+
+  position: relative;
+  z-index: 0;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 1;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    color: darken(#444, 50%);
+  }
+}
+
+main {
+  position: relative;
+  z-index: 2;
+  padding: 1rem;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: auto;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 1rem;
+  background: rgba(255,255,255,0.5);
+  @media (min-width: 80rem) {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+  }
+  a {
+    margin: 0.5rem 0 0;
+    display: block;
+    font-style: italic;
+  }
+}
+
+header {
+  h1 {
+    margin: 0 0 .25rem;
+  }
+
+  small {
+    font-size: 2rem;
+    font-style: italic;
+  }
+}
+
+footer {
+  display: grid;
+  grid-gap: 1rem;
+
+  @media (min-width: 60rem) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (min-width: 80rem) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  a {
+    margin: 0;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h2 {
+      font-style: italic;
+      margin: 0 1rem 0 0;
+      line-height: inherit;
+    }
+
+    small {
+      font-size: 1rem;
+      text-align: right;
+    }
+  }
+}
